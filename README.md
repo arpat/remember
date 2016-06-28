@@ -10,8 +10,9 @@
 - Searching sends commands to grep.
 
 
+###Usage
 
- remember the last cmd
+remember the last cmd
 ```sh
 remember !!
  ```
