@@ -46,3 +46,7 @@ recollect mdadm
  ln -s remember.sh remember
  ln -s remember.sh recollect
 ```
+
+### To Do's
+
+- Would be nice to specify date range of .list files for recollect, month year perhaps?
