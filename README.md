@@ -34,7 +34,7 @@ the following will fail as the shell will act on the pipe symbol:
 ```
 remember without args will prompt accordingly.
 
- The format of the saved info is a simple text file with a leading hash (to save accidental execution) and the comment on the same line followed by a double hash. Make a directory to store these files, usually ~/remember.
+ The format of the saved info is a simple text file with a leading hash (to save accidental execution) and the comment on the same line separated by a double hash. Make a directory to store these files, usually ~/remember.
  
  eg this will return all lines from all notes matching 'mdadm'
 ```sh
