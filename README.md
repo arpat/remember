@@ -2,7 +2,9 @@
 - Way too simple cmdline note taker and searcher
 - Blame: Arun Patel
 - Generates single line entries appended to an ascii text file with the format 
-- [# <wizzy cmdline> ## free text comment]
+ 
+ `[# <wizzy cmdline> ## free text comment]`
+
 - If called as recollect searches instead
 - use <ln -s remember.sh recollect> to softlink.
 - Searching sends commands to grep.
