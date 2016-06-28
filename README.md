@@ -28,7 +28,7 @@ the following will fail as the shell will act on the pipe symbol:
  ```sh
  remember ls -R | grep *.tmp
  ```
- Use weak "" or strong '' quoting to give the desired result:
+ Use weak " " or strong ' ' quoting to give the desired result:
  ```sh
  remember "ls -R | grep *.tmp"
 ```
