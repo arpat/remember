@@ -6,7 +6,7 @@
  `[# <wizzy cmdline> ## free text comment]`
 
 - If called as recollect searches instead
-- use <ln -s remember.sh recollect> to softlink.
+- use `<ln -s remember.sh recollect>` to softlink.
 - Searching sends commands to grep.
 
 
