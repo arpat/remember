@@ -1,0 +1,19 @@
+# gcloud container clusters create example-cluster ## Create a cluster (this step can take a few minutes to complete)
+# gcloud container get-server-config ## get Container Engine server config returns kubernetes versions
+# gcloud container clusters list ## show the configured clusters by name zone version IP address of master
+# gcloud auth list ## show credentialed accounts
+# gcloud config set account <account> ## set the active account
+# gcloud config list ## show the configured gcloud setup
+# gcloud projects list ## List projects accessible by the active account
+# gcloud projects get-iam-policy dev-range-109813 ## Get IAM policy for a project shows members roles etag version
+# gcloud compute project-info describe ## read project data and describe the Google Compute Engine project resource in yaml
+# gcloud components list ## show installed or available components at your current SDK version
+# gcloud compute regions list ## list Google Compute Engine regions with basic resource usage
+# gcloud compute regions describe asia-east1 ## describe a Google Compute Engine region in yaml
+# gcloud compute routes list ## displays all Google Compute Engine routes in a project
+# gcloud config list --project dev-range-109813 ## temporarily override the default project with this project id
+# gcloud dns project-info describe powop-1349 ## display Cloud DNS related information for your project
+# gcloud dns managed-zones list ## see the list of all managed-zones
+# gcloud iam service-accounts list ## list all of a project's service accounts
+# gcloud iam service-accounts keys list --iam-account ArunSMTP@gmail.com ## list the keys for a service account
+# gcloud source repos clone default ## git clone  the default Google Cloud repository for development use your project name as TARGET_DIR. default is automatically created for each project can be browsed and edited in the Developers Console

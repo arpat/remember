@@ -9,6 +9,55 @@
 - use `<ln -s remember.sh recollect>` to softlink.
 - Searching sends commands to grep.
 
+###Example
+
+#Install
+```
+$ cd ~
+$ git clone https://github.com/arpat/remember.git
+$ cd ~/bin
+$ ln -s ~/remember/remember.sh remember
+$ ln -s ~/remember/remember.sh recollect
+$ cd ~
+```
+
+# Save a useful cmdline 
+
+```
+$ sudo sysdig -p "%12user.name %6proc.pid %12proc.name %3fd.num %fd.typechar %fd.name" evt.type=open
+
+  ...that was a great command, I want to note that down!
+
+$ remember !!
+remember sudo sysdig -p "%12user.name %6proc.pid %12proc.name %3fd.num %fd.typechar %fd.name" evt.type=open 
+Remembering: sudo sysdig -p %12user.name %6proc.pid %12proc.name %3fd.num %fd.typechar %fd.name evt.type=open
+What is the comment?
+snoop file opens as they occur
+Saving as: # sudo sysdig -p %12user.name %6proc.pid %12proc.name %3fd.num %fd.typechar %fd.name evt.type=open ## snoop file opens as they occur
+```
+
+# Recollecting
+```
+$ recollect 
+Recollecting... Use full grep commands.
+  -    -    -    -    -    -    -    -    -    -    -    -    -
+  eg.   kubectl          will return any line with kubectl
+  eg.  -E dpkg.*stat     will return lines with dpkg AND stat
+  eg.  -e dpkg -e stat   will return lines with  dpkg OR stat
+  eg.  -v \#\#           will return lines without comments
+  -    -    -    -    -    -    -    -    -    -    -    -    -
+What needs to be recollected?
+-E sysdig.*snoop
+$rememberDir is /home/apatel/remember
+---
+# sysdig -p "%12user.name %6proc.pid %12proc.name %3fd.num %fd.typechar %fd.name" evt.type=open ## Basic opensnoop: snoop file opens as they occur
+# sysdig -p "%12user.name %6proc.pid %12proc.name %3fd.num %fd.typechar %fd.name" evt.type=open and evt.failed=true ## snoop failed file opens as they occur
+---
+&
+
+```
+
+
 
 ###Usage
 
