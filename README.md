@@ -97,7 +97,7 @@ recollect mdadm
  ln -s remember.sh recollect
 ```
 
-## Now With Added Command Line tips and tricks
+## Now With Added Command Line 'tips and tricks'
 
 I have included some of the stuff I'm working with -sysdig examples from their website, and a few gcloud ones.
 
