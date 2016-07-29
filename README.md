@@ -9,9 +9,10 @@
 - use `<ln -s remember.sh recollect>` to softlink.
 - Searching sends commands to grep.
 
-###Example
+##Example
 
-#Install
+###Install
+
 ```
 $ cd ~
 $ git clone https://github.com/arpat/remember.git
@@ -21,7 +22,7 @@ $ ln -s ~/remember/remember.sh recollect
 $ cd ~
 ```
 
-# Save a useful cmdline 
+###Save a useful cmdline 
 
 ```
 $ sudo sysdig -p "%12user.name %6proc.pid %12proc.name %3fd.num %fd.typechar %fd.name" evt.type=open
@@ -36,7 +37,8 @@ snoop file opens as they occur
 Saving as: # sudo sysdig -p %12user.name %6proc.pid %12proc.name %3fd.num %fd.typechar %fd.name evt.type=open ## snoop file opens as they occur
 ```
 
-# Recollecting
+###Recollecting
+
 ```
 $ recollect 
 Recollecting... Use full grep commands.
@@ -53,7 +55,6 @@ $rememberDir is /home/apatel/remember
 # sysdig -p "%12user.name %6proc.pid %12proc.name %3fd.num %fd.typechar %fd.name" evt.type=open ## Basic opensnoop: snoop file opens as they occur
 # sysdig -p "%12user.name %6proc.pid %12proc.name %3fd.num %fd.typechar %fd.name" evt.type=open and evt.failed=true ## snoop failed file opens as they occur
 ---
-&
 
 ```
 
