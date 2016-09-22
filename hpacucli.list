@@ -1,0 +1,19 @@
+# hpacucli => ctrl all show config ## detailed status of the controller and the disk status
+# hpacucli => ctrl all show status ## display the status of just the controller
+# hpacucli => ctrl slot=0 pd all show status ## display the status of the physical drives
+# hpacucli => ctrl slot=0 pd 2I:1:6 show detail ## display the detail status of a specific physical drive
+# hpacucli => ctrl slot=0 ld all show ## display all available logical drives on the system
+# hpacucli => ctrl slot=0 create type=ld drives=1I:1:3 raid=0 ## create a new logical drive using RAID0
+# hpacucli => ctrl slot=0 create type=ld drives=1I:1:3,1I:1:4 raid=1 ## create a new logical drive using RAID1
+# hpacucli => ctrl slot=0 create type=ld drives=1I:1:3,1I:1:4,2I:1:6,2I:1:7,2I:1:8 raid=5 ##  create a new logical drive using RAID 5 option
+# hpacucli => ctrl slot=0 ld all show status ## After you create a logical drive, execute the following command to verify that the LD got created
+# hpacucli => rescan ## scan for new devices after adding new physical hard disk
+# hpacucli => ctrl slot=0 ld 2 show ## display the detailed status of the logical drive
+# hpacucli => ctrl slot=0 ld 2 delete ## delete a logical drive with the number 2
+# hpacucli => ctrl slot=0 ld 2 add drives=2I:1:6,2I:1:7 ## add the new drives to existing logical volume
+# hpacucli => ctrl slot=0 array all add spares=2I:1:6,2I:1:7 ## add the spare disks to arrays that can be used in case of disk failures on one of the logical drives
+# hpacucli => ctrl slot=0 modify dwc=disable ## disable cache for the entire slot
+# hpacucli => ctrl slot=0 modify dwc=enable ## enable cache for the entire slot
+# hpacucli => ctrl slot=0 pd 2I:1:6 modify erase ## erase a physical drive in array
+# hpacucli => ctrl slot=0 ld 2 modify led=on ## blink the LED on the physical drives
+# hpacucli => ctrl slot=0 ld 2 modify led=off ## blink the LED on the physical drives

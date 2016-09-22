@@ -1,0 +1,11 @@
+# https://mygitlabserver/profile/personal_access_tokens ## generate a personal access token for each application you use that needs access to the GitLab API.
+# git show-branch ## Shows the commit ancestry graph starting from the commits named with <rev>s or <globs>s (or all refs under refs/heads and/or refs/tags) semi-visually.
+# git branch -a ## show all the remote branches available for checkout
+# git remote add cicd ssh://git@a10976.ad.kew.org:30022/arpat/infrastructure ## add a repo called cicd using ssh username arpat over a non standard ssh port
+# git remote set-url origin ssh://git@github.com/arpat/RBGKew/powop-infrastructure.git ## get the remote git repository to use ssh
+# gcloud source repos clone default ## git clone  the default Google Cloud repository for development use your project name as TARGET_DIR. default is automatically created for each project can be browsed and edited in the Developers Console
+# git remote add origin git@kppgitlab01.ad.kew.org:operations/kew-configs.git ## add a git ssh remote repo
+# git remote show origin ## show the remote setup and branches available
+# git reset ## unstage all files after over zealous git add
+# git push origin --delete <branch_name> ## delete remote branch
+# https://gitlab.example.com/api/v3/projects?private_token=9koXpg98eAheJpvBs5tK ## use a personal access token to get restricted files from gitlab

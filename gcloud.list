@@ -1,19 +1,44 @@
-# gcloud container clusters create example-cluster ## Create a cluster (this step can take a few minutes to complete)
-# gcloud container get-server-config ## get Container Engine server config returns kubernetes versions
-# gcloud container clusters list ## show the configured clusters by name zone version IP address of master
+# gcloud auth activate-service-account storage-sa@projectid-123456789.iam.gserviceaccount.com --key-file stor.key.json ## add and activate a service account from a private keyfile
+# gcloud auth activate-service-account storage-sa@projectid-123456789.iam.gserviceaccount.com --key-file stor.key.json ## add credentials and activate a service account from a key file into the current account config
 # gcloud auth list ## show credentialed accounts
-# gcloud config set account <account> ## set the active account
-# gcloud config list ## show the configured gcloud setup
-# gcloud projects list ## List projects accessible by the active account
-# gcloud projects get-iam-policy dev-range-109813 ## Get IAM policy for a project shows members roles etag version
-# gcloud compute project-info describe ## read project data and describe the Google Compute Engine project resource in yaml
+# gcloud beta auth application-default print-access-token ## get the access token for the default project and active account
 # gcloud components list ## show installed or available components at your current SDK version
-# gcloud compute regions list ## list Google Compute Engine regions with basic resource usage
+# gcloud compute disks create data-db --size 10GB ## create a persistent disk with name and size
+# gcloud compute images list ## see all currently available container base images released
+# gcloud compute instances add-metadata [INSTANCE_NAME] --metadata block-project-ssh-keys=TRUE ## metadata value blocks all project-wide keys from functioning on this instance so that only instance-only keys will work
+# gcloud compute instances add-metadata instance-name --metadata-from-file sshKeys="/home/user/.ssh/id_rsa.pub" ## add your ssh pubkey to a gcloud compute instance
+# gcloud compute instances describe instance-name ## get metadata value for your instance
+# gcloud compute instances list ## show the name zone internal and external IP addresses of instances
+# gcloud compute project-info describe ## read project data and describe the Google Compute Engine project resource in yaml
 # gcloud compute regions describe asia-east1 ## describe a Google Compute Engine region in yaml
+# gcloud compute regions list ## list Google Compute Engine regions with basic resource usage
 # gcloud compute routes list ## displays all Google Compute Engine routes in a project
-# gcloud config list --project dev-range-109813 ## temporarily override the default project with this project id
-# gcloud dns project-info describe powop-1349 ## display Cloud DNS related information for your project
+# gcloud compute routes list ## show google cloud networks and routes
+# gcloud config configurations list ## lists existing named configurations
+# gcloud config list --project projectid-123456789 ## temporarily override the default project with this project id
+# gcloud config list ## show the configured gcloud setup
+# gcloud config set account <account> ## set the active account
+# gcloud config set compute/zone europe-west1-d ## sets the default zone
+# gcloud config set proxy/address proxy/port proxy/type ## set unset the web proxy for cmd line tools
+# gcloud container clusters create cluster-name --num-nodes 2 ## create a google Container Engine cluster with 2 nodes
+# gcloud container clusters create example-cluster ## Create a cluster (this step can take a few minutes to complete)
+# gcloud container clusters get-credentials cluster-name --zone europe-west1-d --project projectid-123456789 ## setup cluster endpoint and auth data for kubeconfig so kubectl controls GKE
+# gcloud container clusters list ## show the configured clusters by name zone version IP address of master
+# gcloud container get-server-config ## get Container Engine server config returns kubernetes versions
 # gcloud dns managed-zones list ## see the list of all managed-zones
+# gcloud dns project-info describe projectid-123456789 ## display Cloud DNS related information for your project
+# gcloud iam list-grantable-roles https://www.googleapis.com/compute/v1/projects/projectid-123456789/zones/europe-west1-d/instances/instance-1 ## list IAM grantable roles for a given reource via full resource name or uri
+# gcloud iam service-accounts keys create ./delkey.json --iam-account test-sa@projectid-123456789.iam.gserviceaccount.com ## store the service accounts private key into a json file
+# gcloud iam service-accounts keys list --iam-account somebody@gmail.com ## list the keys for a service account
 # gcloud iam service-accounts list ## list all of a project's service accounts
-# gcloud iam service-accounts keys list --iam-account ArunSMTP@gmail.com ## list the keys for a service account
+# gcloud --project projectid-123456789 iam service-accounts create test-sa --display-name a test service account ## create a service account from the cmd line
+# gcloud --project projectid-123456789 iam service-accounts get-iam-policy storageadmin@projectid-123456789.iam.gserviceaccount.com --format json ## first get template to modify before granting access to a user for a service account (where the service account is the resource)
+# gcloud projects get-iam-policy projectid-123456789 ## Get IAM policy for a project shows members roles etag version
+# gcloud projects get-iam-policy projectid-123456789 --format json > DELETEME.json ## get the projects policy for users and accounts into a file
+# gcloud projects get-iam-policy projectid-123456789 ## get the projects auth and ident policy members and roles
+# gcloud projects get-iam-policy projectid-123456789 ## get a project's Cloud IAM policy returning members and role bindings in yaml
+# gcloud projects list ## List projects accessible by the active account
+# gcloud projects set-iam-policy projectid-123456789 DELETEME.json ## update the projects policy from an edited file
 # gcloud source repos clone default ## git clone  the default Google Cloud repository for development use your project name as TARGET_DIR. default is automatically created for each project can be browsed and edited in the Developers Console
+# nslookup -q=TXT _cloud-netblocks.googleusercontent.com  8.8.8.8 ## literal IP addresses for Google Cloud Platform
+# nslookup -q=TXT _cloud-netblocks1.googleusercontent.com 8.8.8.8 ## the current range of addresses associated with public IP addresses of Google Cloud Platform 

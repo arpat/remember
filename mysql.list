@@ -1,0 +1,11 @@
+# mysqladmin flush-hosts ## flush dns cache from mysql security checks fwd and ptr match or access denied
+# mysql -u root -ppassyword -e "show processlist;" ## login as root and show mysql processes
+# mysql -u root -ppassyword ## login to to the mysql client
+# mysql=>client SHOW DATABASES; ## mysql list databases on host
+# mysql=>client USE <databasename>; ## change to this database, confirm with SELECT DATABASE();
+# mysql=>client SHOW TABLES; ## lists the non-TEMPORARY tables in a given database
+# mysql=>client SHOW GRANTS FOR 'root'@'%'; ## display the privileges granted to the account
+# mysql=>client select user,host from mysql.user; ## list the users in a table
+# mysql=>client show grants for 'root'@'%'; ## find the privilege(s) granted to a particular MySQL account
+# while [ 1 ] ; do mysqladmin -uroot -ppassy processlist ; sleep 5 ; done ## see what mysql is doing
+# sysdig -s 2000 -A -c echo_fds fd.sip=192.168.30.5 and proc.name=apache2 and evt.buffer contains SELECT ## See queries made via apache to an external MySQL server happening in real time
